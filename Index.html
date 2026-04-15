@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Robot Arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="menu-screen" id="menuScreen">
+    <div class="menu-glow"></div>
+
+    <h1 class="title">NEON ROBOT ARENA</h1>
+    <p class="subtitle">Vyberte si roboty a dejte souboj 1v1</p>
+
+    <div class="selectors">
+      <div class="player-select">
+        <h2>Hráč 1</h2>
+        <p class="controls">WASD + Q</p>
+        <div class="robot-grid" id="player1Options"></div>
+      </div>
+
+      <div class="player-select">
+        <h2>Hráč 2</h2>
+        <p class="controls">Šipky + Mezerník</p>
+        <div class="robot-grid" id="player2Options"></div>
+      </div>
+    </div>
+
+    <div class="selected-info">
+      <div class="info-card" id="player1Info">
+        <h3>Hráč 1 robot</h3>
+        <p>Ještě není vybráno</p>
+      </div>
+      <div class="info-card" id="player2Info">
+        <h3>Hráč 2 robot</h3>
+        <p>Ještě není vybráno</p>
+      </div>
+    </div>
+
+    <button id="startBtn" class="start-btn" disabled>Spustit zápas</button>
+  </div>
+
+  <div class="game-ui hidden" id="gameUI">
+    <div class="topbar">
+      <div class="hud-card">
+        <div class="hud-name">Hráč 1</div>
+        <div class="hud-robot" id="hudP1Robot">-</div>
+        <div class="hp-bar">
+          <div class="hp-fill hp-fill-green" id="hpFill1"></div>
+        </div>
+        <div class="hud-hp" id="hpText1">100 / 100</div>
+      </div>
+
+      <div class="center-info">
+        <h1>NEON ROBOT ARENA</h1>
+        <p>Hráč 1: WASD + Q | Hráč 2: Šipky + Mezerník</p>
+      </div>
+
+      <div class="hud-card">
+        <div class="hud-name">Hráč 2</div>
+        <div class="hud-robot" id="hudP2Robot">-</div>
+        <div class="hp-bar">
+          <div class="hp-fill hp-fill-red" id="hpFill2"></div>
+        </div>
+        <div class="hud-hp" id="hpText2">100 / 100</div>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="1100" height="620"></canvas>
+
+    <div class="bottom-actions">
+      <button id="restartBtn" class="neon-btn">Hrát znovu</button>
+      <button id="backToMenuBtn" class="neon-btn alt">Zpět do menu</button>
+    </div>
+  </div>
+
+  <div class="overlay hidden" id="overlay">
+    <div class="overlay-card">
+      <h2 id="winnerText">Vyhrál Hráč 1!</h2>
+      <p id="winnerSubtext">Skvělý souboj.</p>
+      <div class="overlay-actions">
+        <button id="playAgainBtn" class="neon-btn">Rematch</button>
+        <button id="menuBtn" class="neon-btn alt">Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
